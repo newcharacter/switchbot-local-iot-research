@@ -1,0 +1,13 @@
+[project]
+name = "switchbot-local-iot-research"
+version = "0.1.0"
+description = "Public-safe SwitchBot responsible disclosure and local-control research examples"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "James Lumb" }
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

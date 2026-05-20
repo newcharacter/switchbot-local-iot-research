@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Keep raw research material out of this public-safe repo.
+captures/
+snapshots/
+firmware/
+*.pem
+*.p12
+*.key
+*.crt
+*.cer
+*.flow
+*.log
+*.jsonl
+*token*
+*refresh*

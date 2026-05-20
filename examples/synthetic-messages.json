@@ -1,0 +1,20 @@
+[
+  {
+    "name": "meter sensor binary payload",
+    "topic": "synthetic/link_to_app",
+    "encoding": "hex",
+    "known_sensor_macs": ["AABBCCDDEEFF"],
+    "payload": "aabbccddeeff570058059332"
+  },
+  {
+    "name": "shadow update JSON payload",
+    "topic": "synthetic/shadow",
+    "encoding": "json",
+    "payload": {
+      "changes": [
+        {"deviceID": "DEVICE1", "propertyID": 820, "propertyValue": 77},
+        {"deviceID": "DEVICE1", "propertyID": "830", "propertyValue": 215}
+      ]
+    }
+  }
+]
