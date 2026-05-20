@@ -13,14 +13,13 @@ The local-control work asks a different question:
 - Keep raw vendor credentials and captures out of the public implementation.
 - Prefer synthetic fixtures and small regression tests for public examples.
 
-```mermaid
-flowchart LR
-    A["Sensor broadcast"] --> B["Hub relay"]
-    B --> C["Normalized event"]
-    C --> D["Home Assistant entity"]
-    E["Cloud shadow read"] --> F["Source-labeled state"]
-    D --> F
-```
+| Input | Handling |
+|---|---|
+| Sensor broadcast | Decode BLE-style service data where available. |
+| Hub relay | Normalize relayed events without publishing live topics or credentials. |
+| Home Assistant entity | Update entities from explicit event types. |
+| Cloud shadow read | Treat as one source, not as absolute device truth. |
+| Source-labeled state | Preserve whether a value came from local observation, cloud shadow, or another path. |
 
 ## Decoder Example
 

@@ -8,14 +8,13 @@ The central finding is a cloud validation problem. After SwitchBot's remediation
 
 ## Research Shape
 
-```mermaid
-flowchart LR
-    A["SwitchBot account/devices"] --> B["Cloud shadow state"]
-    B --> C["Retest harness"]
-    C --> D["Read back and restore"]
-    C --> E["Vendor follow-up"]
-    B --> F["Home Assistant/local-control prototype"]
-```
+| Thread | What it connected |
+|---|---|
+| SwitchBot account/devices | Ethical test boundary for active mutation. |
+| Cloud shadow state | The trust boundary under test. |
+| Retest harness | Baseline read, reversible write, readback, restoration, and later read-only confirmation. |
+| Vendor follow-up | Coordinated disclosure after remediation did not match the expected outcome. |
+| Home Assistant/local-control prototype | Engineering path away from treating vendor cloud state as unquestioned truth. |
 
 ## What Was Found
 

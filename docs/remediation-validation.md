@@ -4,20 +4,16 @@ Vendor acknowledgement is useful, but it is not the same thing as remediation. T
 
 ## Retest Shape
 
-```mermaid
-sequenceDiagram
-    participant R as Researcher
-    participant C as Cloud shadow
-    participant V as Vendor
-    R->>V: Report scoped findings
-    V->>R: Acknowledge and give remediation window
-    R->>C: Read owned-account baseline
-    R->>C: Apply reversible test write
-    R->>C: Read back cloud value
-    R->>C: Restore original value
-    R->>C: Confirm restoration with read-only run
-    R->>V: Follow up with bounded evidence
-```
+| Step | Result |
+|---|---|
+| Report scoped findings | Vendor had enough information to assess the issue privately. |
+| Vendor acknowledgement | SwitchBot gave an expected remediation window. |
+| Read owned-account baseline | Starting values were captured before mutation. |
+| Apply reversible test write | The retest used values that could be restored immediately. |
+| Read back cloud value | The cloud path returned the modified value. |
+| Restore original value | The test did not leave the device/account in the modified state. |
+| Confirm restoration later | A later read-only run checked the restored state without new writes. |
+| Follow up with evidence | The remediation gap was sent back through the disclosure thread. |
 
 ## Why The Loop Matters
 

@@ -10,18 +10,15 @@ The public repo keeps the architecture conceptual. It avoids exact hosts, topics
 
 ## System Shape
 
-```mermaid
-flowchart TD
-    A["Mobile app"] --> B["SwitchBot cloud"]
-    B --> C["OEM vacuum platform"]
-    C --> D["K10+ Pro vacuum"]
-    B --> E["Cloud shadow state"]
-    F["Hub Mini"] --> G["BLE sensors"]
-    F --> H["IR devices"]
-    F --> I["MQTT-style event path"]
-    I --> J["Local-control prototype"]
-    E --> J
-```
+| Layer | Role in the research |
+|---|---|
+| Mobile app | Shows the richer app-facing state and control surface. |
+| SwitchBot cloud | Mediates device state, cloud shadow state, account context, and app behaviour. |
+| OEM vacuum platform | Underlying vacuum state and commands exposed through the SwitchBot wrapper. |
+| K10+ Pro vacuum | One major device class used for state mapping and retest context. |
+| Cloud shadow state | Validation boundary where the strongest finding sits. |
+| Hub Mini | Relay point for BLE sensors, IR devices, and event-style updates. |
+| Local-control prototype | Home Assistant direction that keeps cloud, local, and device-originated values distinguishable. |
 
 ## Public API vs Internal State
 

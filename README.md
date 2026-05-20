@@ -36,15 +36,15 @@ The retest showed that this was not just a stale report waiting for a fix window
 
 ## Evidence Chain
 
-```mermaid
-flowchart LR
-    A["Owned-account baseline"] --> B["Cloud shadow read"]
-    B --> C["Reversible write"]
-    C --> D["Cloud readback"]
-    D --> E["Value restored"]
-    E --> F["Later read-only check"]
-    F --> G["Vendor follow-up"]
-```
+| Step | Purpose |
+|---|---|
+| Owned-account baseline | Read the starting cloud-shadow values before changing anything. |
+| Cloud shadow read | Confirm the tested properties were reachable through the cloud path. |
+| Reversible write | Apply a bounded value that could be restored immediately. |
+| Cloud readback | Confirm the cloud accepted and returned the modified value. |
+| Value restored | Put the original value back. |
+| Later read-only check | Confirm the restored state without applying new writes. |
+| Vendor follow-up | Report the retest result through the coordinated disclosure thread. |
 
 The point of the chain is that the proof was repeatable, reversible, and scoped. The active test boundary was owned devices and accounts. The impact boundary is broader: server-side validation for a shared cloud-shadow path.
 
